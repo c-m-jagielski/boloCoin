@@ -25,7 +25,9 @@ class BlockChain {
 
 	// Need a manual genesis block, the data doesn't matter
 	createGenesisBlock() {
-		return new Block(0, "01/01/1900", "Genesis block", "00");
+		let tmp = new Block(0, "01/01/2020", "Genesis block", "0");
+		tmp.hash = tmp.calculateHash();
+		return tmp;
 	}
 
 	getLatestBlock() {
